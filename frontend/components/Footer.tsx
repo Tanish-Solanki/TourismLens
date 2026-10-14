@@ -23,9 +23,6 @@ export function Footer() {
                             A data-driven decision-support system built for Nirma University&apos;s Data Analysis and Visualization (DAV 3CS103ME244) course.
                             Analyzes historical global travel records from 2019–2024 (10,000 trips across 20 origin and 20 destination countries).
                         </p>
-                        <div className="text-[11px] text-[#EBCFB1] font-medium pt-1">
-                            Submitted by: Tanish Solanki (24BCE360), Pratham Chaudhary (24BCE351), Manav Vala (24BCE345)
-                        </div>
                     </div>
 
                     {/* Col 2: Core Applications */}
