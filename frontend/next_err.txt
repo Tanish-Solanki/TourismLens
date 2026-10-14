@@ -1,0 +1,95 @@
+﻿Γû▓ Next.js 16.4.0 (Turbopack)
+node.exe : ΓÜá 
+Warning: Next.js 
+ignored 
+package-lock.json 
+in C:\Users\Dell 
+because it is 
+outside the current 
+Git repository (C:\U
+sers\Dell\OneDrive\D
+esktop\Sem 
+5\DAV\Innovative Ass
+ignment\Web\frontend
+).
+At line:1 char:1
++ & "C:\Program File
+s\nodejs/node.exe" 
+"C:\Program Files\no
+dejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo  
+            : NotS  
+  pecified: (ΓÜá    
+ Warning: Ne...\    
+Web\frontend).:    
+String) [], Rem    
+oteException
+    + FullyQualifie 
+   dErrorId : Nati  
+  veCommandError
+ 
+ To use this 
+directory, set 
+`turbopack.root` in 
+your Next.js config.
+
+Γ£ô Running next.config.ts took 41ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+  Creating an optimized production build ...
+
+> Build error 
+occurred
+Error: Turbopack 
+build failed with 1 
+error:
+./app/page.tsx:6:14
+Error: Route 
+segment config 
+"dynamic" is not 
+compatible with `nex
+tConfig.cacheCompone
+nts`. Please remove 
+it.
+  [90m4 |[0m 
+[36mimport[0m { 
+fetchApi, [33mGloba
+lOverviewStats[0m 
+} [36mfrom[0m [32
+m"@/lib/api"[0m;
+  [90m5 |[0m
+[31m[1m>[0m 
+[90m6 |[0m 
+[36mexport[0m 
+[36mconst[0m 
+dynamic = [32m"forc
+e-dynamic"[0m;
+  [90m  |[0m      
+        
+[31m[1m^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m 
+[36mexport[0m 
+[36mdefault[0m 
+[36masync[0m 
+[36mfunction[0m 
+[33mHomePage[0m() 
+{
+  [90m9 |[0m   
+[36mlet[0m stats: 
+[33mGlobalOverviewS
+tats[0m | 
+[36mnull[0m = 
+[36mnull[0m;
+
+Ecmascript file had 
+an error
+
+
+    at 
+ignore-listed frames
