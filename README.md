@@ -1,86 +1,73 @@
-# 🌍 TourismLens — Global Tourism Trends & Destination Insights
+# TourismLens
 
-> **Innovative Assignment** | Data Analysis & Visualization (DAV)
-> **Institution:** Nirma University (2026)
-> **Architecture:** Full-Stack Decision Support System · Next.js + FastAPI
+A full-stack decision support system built on global tourism data. TourismLens transforms 10,000 historical trip records (2019–2024) into actionable destination insights — covering preference matching, cost estimation, carbon footprint analysis, and sustainability benchmarking.
 
----
-
-## 📌 Overview
-
-**TourismLens** is an academic, data-driven decision-support platform that transforms **10,000 global trip records (2019–2024)** into actionable destination benchmarks, preference-based matching, trip cost & carbon footprint estimations, and sustainability insights.
-
-Built with deterministic, rule-based empirical data processing — zero black-box ML bias.
+Built as part of the Data Analysis & Visualization (DAV) course at Nirma University.
 
 ---
 
-## 🚀 Application Pages (11 Modules)
+## Application
 
-| # | Route | Description |
-|---|-------|-------------|
-| 1 | `/` | Home — project overview & dataset metric counters |
-| 2 | `/find-destination` | Preference filter matching engine |
-| 3 | `/explore` | Grid of 20 destination profiles with multi-criteria filtering |
-| 4 | `/explore/[id]` | 5-dimension destination profile & trend charts |
-| 5 | `/compare` | Side-by-side benchmarking for 2–3 destinations |
-| 6 | `/trip-analyzer` | Budget & CO₂ estimator by transport mode |
-| 7 | `/sustainability` | Environmental footprint analysis by travel mode |
-| 8 | `/analytics` | Embedded Tableau visual analytics (8 worksheets) |
-| 9 | `/insights` | Statistical & correlation findings |
-| 10 | `/data-explorer` | Paginated dataset grid with CSV export |
-| 11 | `/methodology` | Academic pipeline specs & KNIME workflow |
+The web application consists of 11 pages:
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home — project overview and dataset summary |
+| `/find-destination` | Preference-based destination matching engine |
+| `/explore` | Destination profiles with multi-criteria filtering |
+| `/explore/[id]` | Detailed 5-dimension profile with trend charts |
+| `/compare` | Side-by-side benchmarking for 2–3 destinations |
+| `/trip-analyzer` | Trip cost and CO₂ estimator by transport mode |
+| `/sustainability` | Environmental footprint analysis by travel mode |
+| `/analytics` | Tableau visual analytics (8 worksheets) |
+| `/insights` | Statistical and correlation findings |
+| `/data-explorer` | Paginated dataset grid with CSV export |
+| `/methodology` | Pipeline documentation and KNIME workflow |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
-| **Frontend** | Next.js 16, React, TypeScript, Tailwind CSS |
-| **Backend** | Python, FastAPI, Pandas, Pydantic |
-| **Data** | KNIME-cleaned CSV (10,000 records, 36 columns) |
-| **Visualization** | Tableau Desktop (`.twbx`), Recharts |
-| **Testing** | Pytest (backend unit tests) |
+|-------|------------|
+| Frontend | Next.js 16, React, TypeScript, Tailwind CSS |
+| Backend | Python, FastAPI, Pandas, Pydantic |
+| Data | KNIME-cleaned CSV (10,000 records, 36 columns) |
+| Visualization | Tableau Desktop, Recharts |
+| Testing | Pytest |
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 TourismLens/
-├── backend/                    # FastAPI Python Application
+├── backend/
 │   ├── app/
-│   │   ├── api/                # REST Endpoints
-│   │   │   ├── destinations.py
-│   │   │   ├── overview.py
-│   │   │   ├── recommendations.py
-│   │   │   └── sustainability.py
-│   │   ├── schemas/            # Pydantic Request/Response Models
-│   │   ├── services/           # DataService, MatchService, TripAnalyzer
-│   │   └── main.py             # FastAPI Server Entrypoint
+│   │   ├── api/            # REST endpoints
+│   │   ├── schemas/        # Pydantic models
+│   │   ├── services/       # Business logic
+│   │   └── main.py
 │   ├── data/
-│   │   └── tourism_cleaned.csv # Cleaned Dataset (10,000 records)
+│   │   └── tourism_cleaned.csv
 │   ├── tests/
-│   │   └── test_backend.py     # Pytest Verification Suite
+│   │   └── test_backend.py
 │   └── requirements.txt
 │
-└── frontend/                   # Next.js Application
-    ├── app/                    # App Router (11 Pages)
-    ├── components/             # Navbar, Footer, MetricCard, DestinationCard
-    ├── lib/                    # API Client
-    ├── public/                 # Static Assets
+└── frontend/
+    ├── app/                # Next.js App Router (11 pages)
+    ├── components/         # Navbar, Footer, cards
+    ├── lib/                # API client
     └── package.json
 ```
 
 ---
 
-## ⚡ Quick Start
+## Getting Started
 
-### Prerequisites
-- **Python** 3.10+
-- **Node.js** 18+
+**Prerequisites:** Python 3.10+, Node.js 18+
 
-### 1️⃣ Start FastAPI Backend (Port 8000)
+### Backend (Port 8000)
 
 ```bash
 cd backend
@@ -88,9 +75,9 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-📖 Swagger Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+API documentation available at `http://127.0.0.1:8000/docs`
 
-### 2️⃣ Start Next.js Frontend (Port 3000)
+### Frontend (Port 3000)
 
 ```bash
 cd frontend
@@ -98,9 +85,9 @@ npm install
 npm run dev
 ```
 
-🌐 Application: [http://localhost:3000](http://localhost:3000)
+Application available at `http://localhost:3000`
 
-### 3️⃣ Run Backend Tests
+### Running Tests
 
 ```bash
 cd backend
@@ -109,22 +96,18 @@ pytest tests/test_backend.py
 
 ---
 
-## 📡 Key API Endpoints
+## API Reference
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| `GET` | `/api/overview` | Dataset summary statistics |
-| `GET` | `/api/destinations` | All destination profiles |
-| `GET` | `/api/destinations/{id}` | Single destination details |
-| `POST` | `/api/recommendations` | Preference-based matching |
-| `GET` | `/api/sustainability` | Emission data by transport mode |
+| GET | `/api/overview` | Dataset summary statistics |
+| GET | `/api/destinations` | All destination profiles |
+| GET | `/api/destinations/{id}` | Single destination detail |
+| POST | `/api/recommendations` | Preference-based matching |
+| GET | `/api/sustainability` | Emission data by transport mode |
 
 ---
 
-## 📊 Academic Standards
+## Notes
 
-- ✅ **Zero Black-Box Bias** — All recommendations are deterministic from real historical data
-- ✅ **Derived Metrics Transparency** — Standardized formulas for `repeat_visitor_flag`, `recommend_flag`, `satisfaction_score`
-- ✅ **Reproducibility** — KNIME pipeline fully repeatable; open backend services
-- ✅ **Dataset Provenance** — Raw & cleaned CSVs with documented transformation steps
-
+All recommendations are computed deterministically from historical trip data — no black-box models. Derived metrics (`repeat_visitor_flag`, `recommend_flag`, `satisfaction_score`) follow fixed, documented formulas. The KNIME preprocessing pipeline is fully reproducible from the raw CSV.
