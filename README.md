@@ -128,8 +128,3 @@ pytest tests/test_backend.py
 - ✅ **Reproducibility** — KNIME pipeline fully repeatable; open backend services
 - ✅ **Dataset Provenance** — Raw & cleaned CSVs with documented transformation steps
 
----
-
-## 👨‍💻 Author
-
-**Tanish Solanki** — Nirma University, Sem 5 · Data Analysis & Visualization (DAV)
