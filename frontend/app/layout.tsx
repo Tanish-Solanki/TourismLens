@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "TourismLens — Global Tourism Trends & Destination Insights",
   description: "Data-driven tourism destination decision support system built for Data Analysis & Visualization (DAV) at Nirma University.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
